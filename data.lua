@@ -5,7 +5,7 @@ data:extend({
 {
     type = "item",
     name = "landmover",
-    icon = "__LandMover__/water.png",
+    icon = "__LandMover__/landmover_ent.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "terrain",
     order = "c[landfill]-a[dirt]",
@@ -25,7 +25,9 @@ data:extend({
     category = "crafting-with-fluid",
     ingredients =
     {
-      {type="fluid", name="water", amount=200}
+	  {type="item", name="iron-stick", amount=4},
+	  {type="item", name="steel-plate", amount=3},
+	  {type="item", name="concrete", amount=2},
     },
     result= "landmover",
     result_count = 1
@@ -33,7 +35,9 @@ data:extend({
    {
     type = "technology",
     name = "landmover",
-    icon = "__LandMover__/water.png",
+	prerequisites = {"concrete"},
+    icon = "__LandMover__/landmover_tech.png",
+	icon_size = 128,
     unit =
     {
       count = 50,
