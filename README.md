@@ -1,4 +1,11 @@
 # Changelog
+Version 0.1.2
+* Bugfix entity sprite size not correctly
+* Changed stack size to 100 to match the stack size of landfill
+* Changed recipe to use an actual shovel (+ added shovel entity)
+-------------------------------------------------------------------------------
+Version 0.1.1
+* Changed to a 'decent' recipe
 -------------------------------------------------------------------------------
 Version 0.1.0
 * Initial version: Removing production of landfill, Replaced it by Land Mover
