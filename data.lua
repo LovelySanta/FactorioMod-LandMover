@@ -5,7 +5,7 @@ data:extend({
   {
     type = "item",
     name = "landmover-shovel",
-    icon = "__LandMover__/shovel.png",
+    icon = "__LandMover__/graphics/shovel.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "tool",
@@ -16,7 +16,7 @@ data:extend({
   {
     type = "item",
     name = "landmover",
-    icon = "__LandMover__/landmover_ent.png",
+    icon = "__LandMover__/graphics/landmover_ent.png",
     icon_size = 64,
     flags = {"goes-to-main-inventory"},
     subgroup = "terrain",
@@ -65,7 +65,7 @@ data:extend({
     type = "technology",
     name = "landmover",
     prerequisites = {"concrete"},
-    icon = "__LandMover__/landmover_tech.png",
+    icon = "__LandMover__/graphics/landmover_tech.png",
     icon_size = 128,
     unit =
     {
