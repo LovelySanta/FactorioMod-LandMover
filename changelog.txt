@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.8
 Date: 2. 7. 2018
+  Major features:
+    - Added Land mover MK2 together with required items (Shovel MK2, Compressed landfill)
   Bugfixes:
     - Fixed that migration script didn't work correctly
     - Fixed small inconsistencies in the english translation
