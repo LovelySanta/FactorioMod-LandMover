@@ -11,70 +11,99 @@ end
 
 
 -- shovel recipes
-data:extend({
+local shovel_mk1 =
+{
+  type = "recipe",
+  name = "landmover-shovel",
+  enabled = false,
+  ingredients =
   {
-    type = "recipe",
-    name = "landmover-shovel",
-    enabled = false,
-    ingredients =
-    {
     {type="item", name="iron-stick", amount=5},
     {type="item", name="steel-plate", amount=3},
-    },
-    energy_required = 5,
-    result= "landmover-shovel",
-    result_count = 1
   },
+  energy_required = 5,
+  result= "landmover-shovel",
+  result_count = 1
+}
 
+local shovel_mk2 =
+{
+  type = "recipe",
+  name = shovel_mk1.name .. "-mk2",
+  enabled = false,
+  category = "centrifuging",
+  energy_required = 2 * shovel_mk1.energy_required,
+  ingredients =
   {
-    type = "recipe",
-    name = "landmover-shovel-mk2",
-    enabled = false,
-    ingredients =
-    {
-    {type="item", name="iron-stick", amount=5},
-    {type="item", name="steel-plate", amount=3},
-    },
-    energy_required = 5,
-    result= "landmover-shovel-mk2",
-    result_count = 1
+    {type="item", name=shovel_mk1.name, amount=2},
+    {type="item", name="uranium-235", amount=1},
+    {type="item", name="explosives", amount=1},
   },
-})
+  result= shovel_mk1.result .. "-mk2",
+  result_count = 1
+}
 
 
 
 -- landmover recipes
-data:extend({
+local landmover_mk1 =
+{
+  type = "recipe",
+  name = "landmover",
+  enabled = false,
+  energy_required = 2 * shovel_mk1.energy_required,
+  category = "advanced-crafting",
+  ingredients =
   {
-    type = "recipe",
-    name = "landmover",
-    energy_required = 10,
-    enabled = false,
-    category = "advanced-crafting",
-    ingredients =
-    {
-      {type="item", name="landmover-shovel", amount=1},
-      {type="item", name="steel-plate", amount=5},
-      {type="item", name="concrete", amount=20},
-    },
-    energy_required = 10,
-    result= "landmover",
-    result_count = data.raw["item"]["landmover"].stack_size,
+    {type="item", name="landmover-shovel", amount=1},
+    {type="item", name="steel-plate", amount=5},
+    {type="item", name="concrete", amount=20},
   },
+  result= "landmover",
+  result_count = data.raw["item"]["landmover"].stack_size,
+}
 
+local landmover_mk2 =
+{
+  type = "recipe",
+  name = "landmover-mk2",
+  enabled = false,
+  category = "advanced-crafting",
+  energy_required = 2 * landmover_mk1.energy_required,
+  ingredients =
   {
-    type = "recipe",
-    name = "landmover-mk2",
-    energy_required = 20,
-    enabled = false,
-    category = "advanced-crafting",
-    ingredients =
-    {
-      {type="item", name="landmover", amount=100},
-      {type="item", name="landmover-shovel-mk2", amount=1},
-    },
-    energy_required = 10,
-    result= "landmover-mk2",
-    result_count = 4,
+    {type="item", name="landmover", amount=landmover_mk1.result_count},
+    {type="item", name="landmover-shovel-mk2", amount=1},
+    {type="item", name="uranium-238", amount=3},
   },
+  result= "landmover-mk2",
+  result_count = math.floor(data.raw["item"]["landmover"].stack_size / settings.startup["LM-compressed-landfill-amount"].value),
+}
+
+
+
+-- landfill recipes
+local landfill_uncompressing =
+{
+  type = "recipe",
+  name = "landfill-compressed",
+  enabled = false,
+  --category = "crafting",
+  energy_required = 2,
+  ingredients =
+  {
+    {type="item", name="landfill-compressed", amount=1},
+  },
+  result = "landfill",
+  result_count = settings.startup["LM-compressed-landfill-amount"].value,
+}
+
+
+
+data:extend({
+  shovel_mk1,
+  shovel_mk2,
+  landmover_mk1,
+  landmover_mk2,
+  landfill_uncompressing,
 })

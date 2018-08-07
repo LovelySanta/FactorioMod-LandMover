@@ -22,12 +22,12 @@ if data.raw.technology["landfill"] then
   table.insert(landfillTechnology.effects,
     {
       type = "unlock-recipe",
-      recipe = "landmover"
+      recipe = "landmover-shovel"
     })
   table.insert(landfillTechnology.effects,
     {
       type = "unlock-recipe",
-      recipe = "landmover-shovel"
+      recipe = "landmover"
     })
 
   -- Add the required prerequisites
@@ -42,7 +42,7 @@ end
 
 
 
--- Add the mk2 shovel research
+-- Add the mk2 research
 data:extend({
   {
     type = "technology",
@@ -53,12 +53,14 @@ data:extend({
     prerequisites = {
       "landfill",
       "nuclear-power",
+      "explosives",
     },
 
     effects =
     {
       {type = "unlock-recipe", recipe = "landmover-shovel-mk2"},
       {type = "unlock-recipe", recipe = "landmover-mk2"},
+      {type = "unlock-recipe", recipe = "landfill-compressed"},
     },
 
     unit =
