@@ -1,14 +1,4 @@
 
--- Disable landfill recipe
-data.raw.recipe["landfill"].enabled = false
-if data.raw.recipe["landfill"].normal then
-  data.raw.recipe["landfill"].normal.enabled = false
-end
-if data.raw.recipe["landfill"].expensive then
-  data.raw.recipe["landfill"].expensive.enabled = false
-end
-
-
 
 -- shovel recipes
 local shovel_mk1 =
@@ -107,3 +97,21 @@ data:extend({
   landmover_mk2,
   landfill_uncompressing,
 })
+
+
+
+-- Disable landfill recipe (unlocked by tech if not disabled)
+data.raw.recipe["landfill"].enabled = false
+if data.raw.recipe["landfill"].normal then
+  data.raw.recipe["landfill"].normal.enabled = false
+end
+if data.raw.recipe["landfill"].expensive then
+  data.raw.recipe["landfill"].expensive.enabled = false
+end
+
+
+
+-- make sure the shovel_mk2 can be made in the centrifuge
+if data.raw["assembling-machine"]["centrifuge"].ingredient_count < #shovel_mk2.ingredients then
+  data.raw["assembling-machine"]["centrifuge"].ingredient_count = #shovel_mk2.ingredients
+end
