@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 26. 02. 2019
+  Features:
+    - Updated to base game 0.17 (0.17.0)
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 2. 9. 2018
   Bugfixes:
@@ -54,7 +59,7 @@ Date: 18. 10. 2017
   Features:
     - Nice graphics for tech and entity designed by geilolo
   Balancing:
-    - Changed to a more appropriate recipy (not final)
+    - Changed to a more appropriate recipe (not final)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0 - First public release
 Date: 17. 10. 2017

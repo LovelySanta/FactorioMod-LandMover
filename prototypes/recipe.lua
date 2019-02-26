@@ -108,10 +108,3 @@ end
 if data.raw.recipe["landfill"].expensive then
   data.raw.recipe["landfill"].expensive.enabled = false
 end
-
-
-
--- make sure the shovel_mk2 can be made in the centrifuge
-if data.raw["assembling-machine"]["centrifuge"].ingredient_count < #shovel_mk2.ingredients then
-  data.raw["assembling-machine"]["centrifuge"].ingredient_count = #shovel_mk2.ingredients
-end
