@@ -29,6 +29,8 @@ script.on_configuration_changed(function(data)
 end)
 
 script.on_event(defines.events.on_player_built_tile, function(event)
+  if not event.item then return end
+
   -- Check if the player used land mover
   if event.item.name == "landmover" then
     -- Give the player same amount of landfill als he used landmover
