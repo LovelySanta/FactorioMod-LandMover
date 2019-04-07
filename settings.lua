@@ -18,4 +18,13 @@ data:extend{
     maximum_value = 100,
     order = "LM-a[landfill]-e",
   },
+
+  {
+    -- allow landmover only to be placed adjacent to water
+    type = "bool-setting",
+    name = "LM-enable-anti-cheat",
+    setting_type = "runtime-global",
+    default_value = false,
+    order = "LM-b[cheat]-a",
+  },
 }

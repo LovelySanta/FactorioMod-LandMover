@@ -1,6 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 07. 04. 2019
+  Features:
+    - Anti cheat setting (disabled by default), so you can only remove land adjacent to water
+  Changes:
+    - Bots can't dig up land, because this is not possible with mk2 landmover
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
-Date: 76. 02. 2019
+Date: 27. 02. 2019
   Bugfixes:
     - Fixed crash when building tiles in "/editor" mode
 ---------------------------------------------------------------------------------------------------
@@ -16,7 +23,7 @@ Date: 2. 9. 2018
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 7. 8. 2018
-  Major features:
+  Features:
     - Added Land mover MK2 together with required items (Shovel MK2, Compressed landfill)
   Bugfixes:
     - Fixed that migration script didn't work correctly
@@ -48,7 +55,7 @@ Date: 13. 1. 2018
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 13. 12. 2017
-  Major Features:
+  Features:
     - Updated to Factorio version 0.16
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
