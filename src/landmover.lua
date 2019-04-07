@@ -161,7 +161,7 @@ return {
 
   on_ghost_tile = function(event)
     if event.created_entity.name == "tile-ghost" then
-      if event.stack.name == "landmover" or event.stacy.name == "landmover-mk2" then
+      if event.stack.name == "landmover" or event.stack.name == "landmover-mk2" then
         game.players[event.player_index].print{"messages.LM-no-tile-ghost"}
         event.created_entity.destroy()
       end
