@@ -54,6 +54,7 @@ data:extend({
       "landfill",
       "nuclear-power",
       "explosives",
+      "production-science-pack",
     },
 
     effects =
