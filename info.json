@@ -8,6 +8,6 @@
   "homepage": "https://mods.factorio.com/mod/LandMover",
   "description": "Dig a hole to get some landfill, resulting in a hole of water. Then you can replace the land somewhere else...",
   "dependencies": [
-    "base >= 0.17.0"
+    "base >= 0.17.37"
   ]
 }

@@ -1,5 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.5
+Date: 07. 05. 2019
+  Changes:
+    - Moved shovels to intermediate products
+    - Shovels and Land mover have a small description now
+  Bugfixes:
+    - Fixed crash when placing Land mover ghosts without items on the cursor
+---------------------------------------------------------------------------------------------------
+Version: 0.2.5
 Date: 07. 04. 2019
   Bugfixes:
     - Fixed typo that resulted in a crash
@@ -32,7 +40,7 @@ Date: 7. 8. 2018
     - Added Land mover MK2 together with required items (Shovel MK2, Compressed landfill)
   Bugfixes:
     - Fixed that migration script didn't work correctly
-    - Fixed small inconsistencies in the english translation
+    - Fixed small inconsistencies in the English translation
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.7
 Date: 24. 4. 2018

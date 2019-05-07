@@ -25,7 +25,7 @@ local function nextToWaterTiles(surfaceIndex, tiles)
 
   -- check neighbour tiles if any of them are water
   local isValidTile = {
-    ["water"] = true,
+    ["water"    ] = true,
     ["deepwater"] = true,
   }
   for posY,candidateTilesX in pairs(candidateTiles) do
@@ -161,13 +161,22 @@ return {
 
   on_ghost_tile = function(event)
     if event.created_entity.name == "tile-ghost" then
-      if event.stack and event.stack.valid_for_read then
-        if event.stack.name == "landmover" or event.stack.name == "landmover-mk2" then
-          game.players[event.player_index].print{"messages.LM-no-tile-ghost"}
-          event.created_entity.destroy()
-        end
+      -- now we need to extract the item (name) that was used to build this ghost
+      local itemName
+
+      if event.item then
+        itemName = event.item.name
+      elseif event.stack and event.stack.valid_for_read then
+        itemName = event.stack.name
       else
-        game.players[event.player_index].print("invalid stack")
+        --game.players[event.player_index].print("Cannot extract item used to build this ghost.")
+        log("invalid ghost entity!")
+        return -- nothing more we can do about this
+      end
+
+      if itemName == "landmover" or itemName == "landmover-mk2" then
+        game.players[event.player_index].print{"messages.LM-no-tile-ghost"}
+        event.created_entity.destroy()
       end
     end
   end,
